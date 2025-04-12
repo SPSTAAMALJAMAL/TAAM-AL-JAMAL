@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Hilangkan scroll */
+}
+
+/* HEADER */
+header {
+  background-color: #2f9e31;
+  padding: 15px 20px;
+  position: relative; /* Pastikan tetap di atas */
+  z-index: 10; /* Prioritaskan agar tidak terkena efek overlay */
+}
+
+/* Terapkan font Archivo Black untuk header */
+header h1 {
+  font-family: "Archivo Black", sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo + Nama Sekolah */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-container img {
+  height: 40px;
+}
+
+.logo-container h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/* NAVIGASI MENU */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  font-family: "Open Sans", sans-serif; /* Menggunakan Open Sans */
+  text-decoration: none;
+  color: white;
+  background-color: #006400; /* Warna hijau tua */
+  padding: 12px 20px; /* Padding lebih besar agar nyaman */
+  border-radius: 25px; /* Bentuk oval di pinggir */
+  font-size: 11px;
+  font-weight: bold;
+  transition: 0.3s;
+  display: inline-block; /* Pastikan padding bekerja dengan baik */
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: white;
+  color: #2f9e31;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Gambar Hero */
+.hero img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+/* Overlay Gelap di Atas Gambar */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Sesuaikan transparansi */
+  z-index: 1; /* Pastikan overlay hanya mempengaruhi hero */
+}
+
+/* TEKS HERO */
+.hero-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  z-index: 2; /* Pastikan teks berada di atas overlay */
+}
+
+.hero-text h2 {
+  font-size: 25px;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.hero-text h1 {
+  font-size: 39px;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: bold;
+}
+
+/* TOMBOL */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px; /* Ukuran padding lebih kecil */
+  background-color: white;
+  color: #2f9e31;
+  text-decoration: none;
+  border-radius: 25px; /* Sedikit lebih kecil */
+  font-weight: bold;
+  font-size: 14px; /* Perkecil ukuran font */
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+}
+
+/* RESPONSIF UNTUK MOBILE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+  }
+
+  .logo-container img {
+    height: 40px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

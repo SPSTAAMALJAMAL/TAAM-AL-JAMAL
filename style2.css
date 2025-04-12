@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #2f9e31;
+  padding: 15px 20px;
+}
+
+header h1 {
+  font-family: "Archivo Black", sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-container img {
+  height: 40px;
+}
+
+.logo-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  background-color: #006400;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: white;
+  color: #2f9e31;
+}
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 28px 40px; 
+}
+
+.berita-box {
+  flex: 3;
+  background-color: white;
+  padding: 20px;
+  margin-top: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.berita-item {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  max-width: 1280px;
+  max-height: 1144px;
+}
+
+.berita-item-1 {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+
+.berita-gambar {
+  background-color: #5bb76d;
+  width: 45%;
+  aspect-ratio: 16 / 9;
+  max-height: 47vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.berita-deskripsi {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  flex: 1;
+}
+
+.berita-judul {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #2f9e31;
+}
+
+.berita-deskripsi p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+.berita-deskripsi-1 p {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+}
+.berita-deskripsi-1 ul {
+  font-size: 14px;
+  color: #555;
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2f9e31;
+  color: white;
+  padding: 20px 30px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-left {
+  max-width: 300px;
+  text-align: center; /* Menambahkan untuk center align semua elemen di footer-left */
+  margin: 0 auto; /* Agar footer-left terpusat di dalam footer */
+}
+
+.logo-footer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center; /* Menjaga logo di tengah */
+}
+
+.logo-footer img {
+  height: 30px;
+  align-items: center;
+}
+
+.footer-left h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.footer-left p {
+  margin: 3px 0;
+}
+
+.sosmed-footer {
+  display: flex;
+  justify-content: center;  /* Menjaga gambar di dalamnya terpusat */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sosmed-footer img {
+  height: 20px;
+  cursor: pointer;
+}
+
+
+.footer-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-right p {
+  margin-bottom: 5px;
+}
+
+.contact-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.contact-group {
+  min-width: 150px;
+}
+
+.contact-group p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.copyright-bar {
+  background-color: #006400; /* hijau tua */
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .berita-box {
+    width: 90%;
+  }
+
+  .berita-item {
+    flex-direction: column;
+  }
+
+  .berita-gambar, .berita-deskripsi {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPS TAAM AL JAMAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="Galeri/IMG-20240331-WA0027-removebg-preview.png" alt="Logo 1">
+        <img src="Galeri/IMG-20240331-WA0028-removebg-preview.png" alt="Logo 2">
+        <h1>SPS TAAM AL JAMAL</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Beranda.html">Beranda</a></li>
+          <li><a href="Profil.html">Profil</a></li>
+          <li><a href="Kontak.html">Kontak</a></li>
+          <li><a href="Galeri.html">Galeri</a></li>
+          <li><a href="Registrasi.html" class="active">Registrasi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <!-- Kiri -->
+    <div class="info-box">
+      <h1>Form Pendaftaran</h1>
+      <p>Isilah formulir ini dengan informasi yang sebenar-benarnya.</p>
+      <h3>Rincian Persyaratan:</h3>
+      <p>Persyaratan diserahkan langsung ke sekolah ke bagian administrasi.</p>
+      <ul>
+        <li>Fotokopi Akta Kelahiran</li>
+        <li>Fotokopi Kartu Keluarga</li>
+        <li>Pas Foto 3x4 (2 lembar)</li>
+        <li>Mengisi formulir pendaftaran dengan lengkap</li>
+      </ul>
+    </div>
+  
+    <!-- Kanan -->
+    <div class="form-box">
+      <form action="#" method="post">
+        
+        <p>Identitas Anak :</p>
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Lengkap">
+        <label for="jenis_kelamin">Jenis Kelamin</label>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+          <option value="">-- Pilih --</option>
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+        <label for="tempat_lahir">Tempat Lahir</label>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Tempat Lahir" required><br>
+  
+        <label for="tanggal_lahir">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" required><br>
+        
+        <P>Identitas Orang tua/wali :</P>
+        <label for="nama_ortu">Nama Orang Tua/Wali</label>
+        <input type="text" id="nama_ortu" name="nama_ortu" placeholder="Nama Orang tua/wali" required>
+
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" rows="3" placeholder="Alamat Lengkap"></textarea>
+  
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email" required>
+  
+        <label for="no_hp">No HP/No.Whatsapp</label>
+        <input type="tel" id="no_hp" name="no_hp" placeholder="No HP/No.Whatsapp" required><br>
+        
+        <p>Biaya Registrasi : Rp. 100.000</p>
+        <!-- Select pembayaran -->
+<label for="Metode_pembayaran">Metode Pembayaran</label>
+<select id="Metode_pembayaran" name="Metode_pembayaran" required onchange="tampilkanInfo()">
+  <option value="">-- Pilih --</option>
+  <option value="Dana">Dana</option>
+  <option value="Shopeepay">Shopeepay</option>
+  <option value="Gopay">Gopay</option>
+  <option value="Transfers Bank">Transfers Bank</option>
+</select>
+
+<!-- Box informasi pembayaran -->
+<div id="info-pembayaran" style="display:none; margin-top: 10px;"></div>
+
+<script>
+  function tampilkanInfo() {
+    const metode = document.getElementById("Metode_pembayaran").value;
+    const infoBox = document.getElementById("info-pembayaran");
+    if (metode === "Dana") {
+      infoBox.style.display = "block";
+      infoBox.innerHTML = "<strong>No Dana:</strong> 0812xxxxxxx<br><strong>A/N:</strong> SPS TAAM Al Jamal";
+    } else if (metode === "Shopeepay") {
+      infoBox.style.display = "block";
+      infoBox.innerHTML = "<strong>Shopeepay:</strong> 0813xxxxxxx<br><strong>A/N:</strong> SPS TAAM Al Jamal";
+    } else if (metode === "Gopay") {
+      infoBox.style.display = "block";
+      infoBox.innerHTML = "<strong>Gopay:</strong> 0813xxxxxxx<br><strong>A/N:</strong> SPS TAAM Al Jamal";
+    } else if (metode === "Transfers Bank") {
+      infoBox.style.display = "block";
+      infoBox.innerHTML = "<strong>No Rekening:</strong> 1234567890<br><strong>Bank:</strong> BNI<br><strong>A/N:</strong> SPS TAAM Al Jamal";
+    } else {
+      infoBox.style.display = "none";
+      infoBox.innerHTML = "";
+    }
+  }
+  </script>
+  
+        <label for="Bukti_Pembayaran">Bukti Pembayaran</label>
+        <input type="file" name="nama_file" id="nama_file">
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  <footer>
+    <div class="footer-container">
+      <!-- Kiri -->
+      <div class="footer-left">
+        <div class="logo-footer">
+          <img src="Galeri/IMG-20240331-WA0027-removebg-preview.png" alt="Logo 1">
+          <img src="Galeri/IMG-20240331-WA0028-removebg-preview.png" alt="Logo 2">
+        </div>
+        <h3>SPS TAAM AL JAMAL</h3>
+        <p>Akreditasi C</p>
+        <p>NPSN: 69811920</p>
+        <div class="sosmed-footer">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+      </div>
+  
+      <!-- Kanan -->
+      <div class="footer-right">
+        <p><strong>Hubungi Kami:</strong></p>
+        <div class="contact-columns">
+          <!-- Kolom 1 -->
+          <div class="contact-group">
+            <p><strong>Alamat Sekolah:</strong></p>
+            <p>Jl. Jati Pamijahan RT/RW 02/02, Kel. Sukarindik, Kec. Bungursari</p>
+            <p>Kota Tasikmalaya</p>
+          </div>
+  
+          <!-- Kolom 2 -->
+          <div class="contact-group">
+            <p><strong>Email:</strong></p>
+            <p>spstaamaljamal20@gmail.com</p>
+  
+            <p><strong>No. Telepon:</strong></p>
+            <p>082127198655</p>
+          </div>
+  
+          <!-- Kolom 3 -->
+          <div class="contact-group">
+            <p><strong>No. Whatsapp:</strong></p>
+            <p>082127198655</p>
+  
+            <p><strong>Jam Kerja:</strong></p>
+            <p>Senin - Jumat, 08.00 - 14.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> 
+  <div class="copyright-bar">
+    <p>© 2025 SPS TAAM Al Jamal</p>
+  </div>
+</body>
+</html>
