@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <header>
@@ -40,10 +41,15 @@
         </div>
     </section>
     <script>
-      function toggleMenu() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.toggle('active'); // Menambahkan atau menghapus kelas 'active'
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navMenu = document.querySelector("nav ul");
+    
+        menuIcon.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+        });
+      });
     </script>
+    
 </body>
 </html>
