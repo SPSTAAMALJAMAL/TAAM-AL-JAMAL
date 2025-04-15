@@ -138,7 +138,21 @@ nav ul li a:hover {
 .button:hover {
   background-color: #e0e0e0;
 }
+@media (min-width: 769px) {
+  /* Pastikan menu navigasi selalu tampil pada layar lebar */
+  nav ul {
+    display: flex !important; /* Tampilkan menu secara default pada layar lebar */
+    position: static; /* Memastikan menu tidak melayang */
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+  }
 
+  /* Menyembunyikan ikon menu hamburger pada layar lebar */
+  .menu-icon {
+    display: none;
+  }
+}
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   /* Header */
@@ -163,7 +177,7 @@ nav ul li a:hover {
 
 
   /* Hero Text */
-  .hero-text {
+.hero-text {
     width: 95%; /* Menyesuaikan lebar untuk tampilan mobile */
     padding: 0 10px; /* Menambahkan padding samping */
   }
@@ -190,7 +204,7 @@ nav ul li a:hover {
   /* Menu Ikon */
   .menu-icon {
     display: block; /* Menampilkan ikon menu pada tampilan mobile */
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 20px; /* Mengurangi ukuran ikon menu */
     position: absolute;
     right: 15px; /* Mengurangi jarak dari tepi */
@@ -257,19 +271,5 @@ nav ul li a:hover {
 
   .contact-group {
     width: 100%;
-  }
-}
-@media (min-width: 769px) {
-  nav ul {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background-color: transparent;
-    box-shadow: none;
-    width: auto;
-  }
-
-  .menu-icon {
-    display: none;
   }
 }
