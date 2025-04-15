@@ -3,18 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Hilangkan scroll */
 }
 
 /* HEADER */
 header {
   background-color: #2f9e31;
   padding: 15px 20px;
-  position: relative; /* Pastikan tetap di atas */
-  z-index: 10; /* Prioritaskan agar tidak terkena efek overlay */
+  position: relative;
+  z-index: 10;
 }
 
-/* Terapkan font Archivo Black untuk header */
 header h1 {
   font-family: "Archivo Black", sans-serif;
 }
@@ -55,16 +53,15 @@ nav ul li {
 }
 
 nav ul li a {
-  font-family: "Open Sans", sans-serif; /* Menggunakan Open Sans */
+  font-family: "Open Sans", sans-serif;
   text-decoration: none;
   color: white;
-  background-color: #006400; /* Warna hijau tua */
-  padding: 12px 20px; /* Padding lebih besar agar nyaman */
-  border-radius: 25px; /* Bentuk oval di pinggir */
+  background-color: #006400;
+  padding: 12px 20px;
+  border-radius: 25px;
   font-size: 11px;
   font-weight: bold;
   transition: 0.3s;
-  display: inline-block; /* Pastikan padding bekerja dengan baik */
 }
 
 nav ul li a.active,
@@ -73,6 +70,7 @@ nav ul li a:hover {
   color: #2f9e31;
 }
 
+/* HERO SECTION */
 /* HERO SECTION */
 .hero {
   position: relative;
@@ -98,21 +96,19 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Sesuaikan transparansi */
-  z-index: 1; /* Pastikan overlay hanya mempengaruhi hero */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 /* TEKS HERO */
 .hero-text {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  font-size: 36px;
-  font-weight: bold;
-  z-index: 2; /* Pastikan teks berada di atas overlay */
+  z-index: 2;
 }
 
 .hero-text h2 {
@@ -130,37 +126,115 @@ nav ul li a:hover {
 .button {
   display: inline-block;
   margin-top: 15px;
-  padding: 12px 20px; /* Ukuran padding lebih kecil */
+  padding: 12px 20px;
   background-color: white;
   color: #2f9e31;
   text-decoration: none;
-  border-radius: 25px; /* Sedikit lebih kecil */
+  border-radius: 25px;
   font-weight: bold;
-  font-size: 14px; /* Perkecil ukuran font */
+  font-size: 14px;
 }
 
 .button:hover {
   background-color: #e0e0e0;
 }
 
-/* RESPONSIF UNTUK MOBILE */
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  .hero-text {
+    width: 90%;
+  }
+
+  .hero-text h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 75px;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    background-color: #2f9e31;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active {
+    display: flex;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 16px;
+    background-color: #2f9e31;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background-color: white;
+    color: #2f9e31;
+  }
+
+  .menu-icon {
+    display: block; /* Menampilkan ikon menu pada tampilan mobile */
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 100;
+    cursor: pointer;
+  }
+
   .container {
+    flex-direction: row; /* Pastikan kontainer tetap dalam satu baris */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .logo-container {
+  .contact-columns {
     flex-direction: column;
+    align-items: center;
   }
 
-  .logo-container img {
-    height: 40px;
+  .footer-right {
+    min-width: unset;
+    width: 100%;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+  .contact-group {
+    width: 100%;
   }
 }
