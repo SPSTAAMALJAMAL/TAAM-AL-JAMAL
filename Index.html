@@ -2,11 +2,10 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPS TAAM AL JAMAL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>SPS TAAM AL JAMAL</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -42,8 +41,8 @@
     </section>
     <script>
       function toggleMenu() {
-        const menu = document.querySelector("nav ul");
-        menu.classList.toggle("active");
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active'); // Menambahkan atau menghapus kelas 'active'
       }
     </script>
 </body>
