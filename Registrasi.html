@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SPS TAAM AL JAMAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style4.css">
@@ -16,6 +17,9 @@
         <img src="Galeri/IMG-20240331-WA0027-removebg-preview.png" alt="Logo 1">
         <img src="Galeri/IMG-20240331-WA0028-removebg-preview.png" alt="Logo 2">
         <h1>SPS TAAM AL JAMAL</h1>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i> 
       </div>
       <nav>
         <ul>
@@ -32,14 +36,15 @@
   <div class="wrapper">
     <!-- Kiri -->
     <div class="info-box">
-      <h1>Form Pendaftaran</h1>
+      <h2>Form Pendaftaran</h2>
       <p>Isilah formulir ini dengan informasi yang sebenar-benarnya.</p>
-      <h3>Rincian Persyaratan:</h3>
+      <h2>Rincian Persyaratan:</h2>
       <p>Persyaratan diserahkan langsung ke sekolah ke bagian administrasi.</p>
       <ul>
         <li>Fotokopi Akta Kelahiran</li>
         <li>Fotokopi Kartu Keluarga</li>
-        <li>Pas Foto 3x4 (2 lembar)</li>
+        <li>Fotokopi KTP ayah & ibu</li>
+        <li>Foto Close up (4R)</li>
         <li>Mengisi formulir pendaftaran dengan lengkap</li>
       </ul>
     </div>
@@ -174,5 +179,15 @@
   <div class="copyright-bar">
     <p>© 2025 SPS TAAM Al Jamal</p>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuIcon = document.querySelector(".menu-icon");
+      const navMenu = document.querySelector("nav ul");
+  
+      menuIcon.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
