@@ -307,13 +307,76 @@ footer {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
+  /* Pastikan menu navigasi selalu tampil pada layar lebar */
   nav ul {
+    display: flex !important; /* Tampilkan menu secara default pada layar lebar */
+    position: static; /* Memastikan menu tidak melayang */
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+  }
+
+  /* Menyembunyikan ikon menu hamburger pada layar lebar */
+  .menu-icon {
+    display: none;
+  }
+}
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 10px 15px; /* Mengurangi padding header */
+  }
+
+  .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Logo */
+  .logo-container img {
+    height: 30px; /* Mengurangi tinggi logo */
+  }
+
+  .logo-container h1 {
+    font-size: 18px; /* Mengurangi ukuran font nama sekolah */
+    margin-left: 10px; /* Mengurangi margin */
+  }
+
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .berita-container,
+  .berita-baru {
+    width: 100%;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-icon {
+    display: block; /* Menampilkan ikon menu pada tampilan mobile */
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Mengurangi ukuran ikon menu */
+    position: absolute;
+    right: 15px; /* Mengurangi jarak dari tepi */
+    top: 15px; /* Mengurangi jarak dari atas */
+    z-index: 100;
+    cursor: pointer;
+  }
+   /* Navigasi Menu */
+   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
     right: 5px;
-    top: 75px;
+    top: 50px;
     z-index: 99;
     padding: 0;
     margin: 0;
@@ -346,32 +409,6 @@ footer {
     color: #2f9e31;
   }
 
-  .menu-icon {
-    display: block;
-    color: white;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .berita-container,
-  .berita-baru {
-    width: 100%;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -391,4 +428,6 @@ footer {
   .contact-group {
     width: 100%;
   }
+
+
 }
