@@ -1,3 +1,4 @@
+/* ========== RESET & GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +10,10 @@ body {
   background-color: #ffffff;
 }
 
+/* ========== HEADER ========== */
 header {
   background-color: #2f9e31;
   padding: 15px 20px;
-}
-
-header h1 {
-  font-family: "Archivo Black", sans-serif;
-  color: white;
 }
 
 .container {
@@ -36,8 +33,10 @@ header h1 {
 }
 
 .logo-container h1 {
+  font-family: "Archivo Black", sans-serif;
   font-size: 22px;
   font-weight: bold;
+  color: white;
   margin-left: 15px;
 }
 
@@ -64,14 +63,15 @@ nav ul li a:hover {
   color: #2f9e31;
 }
 
+/* ========== MAIN CONTENT ========== */
 .wrapper {
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  padding: 28px 40px; 
+  padding: 28px 40px;
 }
 
 .berita-box {
-  flex: 3;
   background-color: white;
   padding: 20px;
   margin-top: 12px;
@@ -82,27 +82,18 @@ nav ul li a:hover {
   gap: 20px;
 }
 
-.berita-item {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  margin-top: 20px;
-  max-width: 1280px;
-  max-height: 1144px;
-}
-
+.berita-item,
 .berita-item-1 {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
   margin-top: 20px;
+  width: 100%;
 }
-
-
 
 .berita-gambar {
   background-color: #5bb76d;
-  width: 45%;
+  width: 50%;
   aspect-ratio: 16 / 9;
   max-height: 47vh;
   display: flex;
@@ -115,41 +106,44 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
-
-.berita-deskripsi {
-  font-size: 14px;
-  margin-bottom: 10px;
-  padding-left: 20px;
+.berita-deskripsi,
+.berita-deskripsi-1 {
   flex: 1;
+  padding: 0 20px;
 }
 
 .berita-judul {
   font-size: 30px;
-  text-align: center;
   font-weight: bold;
-  color: #2f9e31;
+  text-align: center;
+  font-family: "Playfair display";
+  color: #000000;
+  margin-bottom: 10px;
 }
 
-.berita-deskripsi p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
+.berita-deskripsi p,
 .berita-deskripsi-1 p {
   font-size: 14px;
-  text-align: center;
-  color: #555;
+  color: #000000;
   line-height: 1.6;
+  font-family: "Open Sans";
 }
+
+.berita-deskripsi-1 p {
+  text-align: center;
+  color: #000000;
+  font-family: "opens sans";
+}
+
 .berita-deskripsi-1 ul {
   font-size: 14px;
-  color: #555;
+  color: #000000;
   list-style-type: disc;
   padding-left: 20px;
   line-height: 1.6;
+  font-family: "opens sans";
 }
-
-/* Footer Styling */
+/* ========== FOOTER ========== */
 footer {
   background-color: #2f9e31;
   color: white;
@@ -166,20 +160,19 @@ footer {
 
 .footer-left {
   max-width: 300px;
-  text-align: center; /* Menambahkan untuk center align semua elemen di footer-left */
-  margin: 0 auto; /* Agar footer-left terpusat di dalam footer */
+  text-align: center;
+  margin: 0 auto;
 }
 
 .logo-footer {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
-  justify-content: center; /* Menjaga logo di tengah */
 }
 
 .logo-footer img {
   height: 30px;
-  align-items: center;
 }
 
 .footer-left h3 {
@@ -194,7 +187,7 @@ footer {
 
 .sosmed-footer {
   display: flex;
-  justify-content: center;  /* Menjaga gambar di dalamnya terpusat */
+  justify-content: center;
   gap: 10px;
   margin-top: 10px;
 }
@@ -203,7 +196,6 @@ footer {
   height: 20px;
   cursor: pointer;
 }
-
 
 .footer-right {
   flex: 1;
@@ -232,7 +224,7 @@ footer {
 }
 
 .copyright-bar {
-  background-color: #006400; /* hijau tua */
+  background-color: #006400;
   color: white;
   text-align: center;
   padding: 10px 15px;
@@ -240,23 +232,127 @@ footer {
   font-weight: bold;
 }
 
+/* ========== RESPONSIVE ========== */
+@media (min-width: 769px) {
+  /* Pastikan menu navigasi selalu tampil pada layar lebar */
+  nav ul {
+    display: flex !important; /* Tampilkan menu secara default pada layar lebar */
+    position: static; /* Memastikan menu tidak melayang */
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
+  }
 
+  /* Menyembunyikan ikon menu hamburger pada layar lebar */
+  .menu-icon {
+    display: none;
+  }
+}
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 10px 15px; /* Mengurangi padding header */
+  }
+
+  .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Logo */
+  .logo-container img {
+    height: 30px; /* Mengurangi tinggi logo */
+  }
+
+  .logo-container h1 {
+    font-size: 18px; /* Mengurangi ukuran font nama sekolah */
+    margin-left: 10px; /* Mengurangi margin */
+  }
+
   .wrapper {
+    padding: 20px;
+  }
+
+  .berita-item,
+  .berita-item-1 {
+    flex-direction: column;
+  }
+
+  .berita-gambar,
+  .berita-deskripsi,
+  .berita-deskripsi-1 {
+    width: 100%;
+    padding: 0;
+  }
+.menu-icon {
+    display: block; /* Menampilkan ikon menu pada tampilan mobile */
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Mengurangi ukuran ikon menu */
+    position: absolute;
+    right: 15px; /* Mengurangi jarak dari tepi */
+    top: 15px; /* Mengurangi jarak dari atas */
+    z-index: 100;
+    cursor: pointer;
+  }
+   /* Navigasi Menu */
+   nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    background-color: #2f9e31;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px ;
+  }
+
+  nav ul.active {
+    display: flex;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 16px;
+    background-color: #2f9e31;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background-color: white;
+    color: #2f9e31;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-columns {
     flex-direction: column;
     align-items: center;
   }
 
-  .berita-box {
-    width: 90%;
-  }
-
-  .berita-item {
-    flex-direction: column;
-  }
-
-  .berita-gambar, .berita-deskripsi {
+  .footer-right {
+    min-width: unset;
     width: 100%;
-    margin-bottom: 20px;
   }
+
+  .contact-group {
+    width: 100%;
+  }
+
+
 }
