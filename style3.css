@@ -74,7 +74,7 @@ nav ul li a:hover {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);  
   gap: 40px;
   justify-content: center; /* Pusatkan grid */
   max-width: 1000px; /* Biar nggak terlalu lebar di layar besar */
@@ -116,6 +116,7 @@ margin: 8px 0;
 font-size: 14px;
 font-weight: 600;
 line-height: 1.4;
+font-family: "playfair display";
 color: #333;
 }
 .lihat-lainnya {
@@ -229,18 +230,42 @@ footer {
 }
 
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
+@media (min-width: 769px) {
+  /* Pastikan menu navigasi selalu tampil pada layar lebar */
+  nav ul {
+    display: flex !important; /* Tampilkan menu secara default pada layar lebar */
+    position: static; /* Memastikan menu tidak melayang */
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
   }
 
-  .contact-columns {
-    flex-direction: column;
+  /* Menyembunyikan ikon menu hamburger pada layar lebar */
+  .menu-icon {
+    display: none;
   }
 }
-
-
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 10px 15px; /* Mengurangi padding header */
+  }
+
+  .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Logo */
+  .logo-container img {
+    height: 30px; /* Mengurangi tinggi logo */
+  }
+
+  .logo-container h1 {
+    font-size: 18px; /* Mengurangi ukuran font nama sekolah */
+    margin-left: 10px; /* Mengurangi margin */
+  }
   .wrapper {
     flex-direction: column;
     align-items: center;
@@ -253,4 +278,74 @@ footer {
   .grid-container {
     grid-template-columns: 1fr;
   }
+  .menu-icon {
+    display: block; /* Menampilkan ikon menu pada tampilan mobile */
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Mengurangi ukuran ikon menu */
+    position: absolute;
+    right: 15px; /* Mengurangi jarak dari tepi */
+    top: 15px; /* Mengurangi jarak dari atas */
+    z-index: 100;
+    cursor: pointer;
+  }
+   /* Navigasi Menu */
+   nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    background-color: #2f9e31;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px ;
+  }
+
+  nav ul.active {
+    display: flex;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 16px;
+    background-color: #2f9e31;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background-color: white;
+    color: #2f9e31;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-right {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .contact-group {
+    width: 100%;
+  }
+
+
 }
