@@ -17,10 +17,10 @@
         <img src="Galeri/IMG-20240331-WA0028-removebg-preview.png" alt="Logo 2">
         <h1>SPS TAAM AL JAMAL</h1>
       </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i> 
+      </div>
       <nav>
-        <div class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
         <ul>
           <li><a href="Beranda.html" class="active">Beranda</a></li>
           <li><a href="Profil.html">Profil</a></li>
@@ -130,11 +130,13 @@
     </div>
 
     <script>
-      const menuIcon = document.querySelector(".menu-icon");
-      const navMenu = document.querySelector("nav ul");
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navMenu = document.querySelector("nav ul");
     
-      menuIcon.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+        menuIcon.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+        });
       });
     </script>
     
