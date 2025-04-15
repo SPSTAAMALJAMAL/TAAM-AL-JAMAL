@@ -73,12 +73,20 @@ nav ul li a:hover {
 .info-box {
   background-color: white;
   padding: 10px;
+  font-family: "playfair display";
 }
 
 .info-box h2 {
   margin-bottom: 10px;
   color: #2f9e31;
+  font-family: "playfair display";
 }
+.info-box h3 {
+  margin-bottom: 10px;
+  color: #2f9e31;
+  font-family: "playfair display";
+}
+
 
 .info-box p {
   margin-bottom: 20px;
@@ -182,18 +190,43 @@ nav ul li a:hover {
 }
 
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
+@media (min-width: 769px) {
+  /* Pastikan menu navigasi selalu tampil pada layar lebar */
+  nav ul {
+    display: flex !important; /* Tampilkan menu secara default pada layar lebar */
+    position: static; /* Memastikan menu tidak melayang */
+    background-color: transparent;
+    box-shadow: none;
+    width: auto;
   }
 
-  .contact-columns {
-    flex-direction: column;
+  /* Menyembunyikan ikon menu hamburger pada layar lebar */
+  .menu-icon {
+    display: none;
   }
 }
-
-
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 10px 15px; /* Mengurangi padding header */
+  }
+
+  .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Logo */
+  .logo-container img {
+    height: 30px; /* Mengurangi tinggi logo */
+  }
+
+  .logo-container h1 {
+    font-size: 18px; /* Mengurangi ukuran font nama sekolah */
+    margin-left: 10px; /* Mengurangi margin */
+  }
+
   .wrapper {
     flex-direction: column;
     align-items: center;
@@ -205,5 +238,53 @@ nav ul li a:hover {
 
   .grid-container {
     grid-template-columns: 1fr;
+  }
+  .menu-icon {
+    display: block; /* Menampilkan ikon menu pada tampilan mobile */
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Mengurangi ukuran ikon menu */
+    position: absolute;
+    right: 15px; /* Mengurangi jarak dari tepi */
+    top: 15px; /* Mengurangi jarak dari atas */
+    z-index: 100;
+    cursor: pointer;
+  }
+   /* Navigasi Menu */
+   nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    z-index: 99;
+    padding: 0;
+    margin: 0;
+    background-color: #2f9e31;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 2px ;
+  }
+
+  nav ul.active {
+    display: flex;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 16px;
+    background-color: #2f9e31;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background-color: white;
+    color: #2f9e31;
   }
 }
